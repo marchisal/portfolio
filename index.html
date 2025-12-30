@@ -46,11 +46,16 @@
                 </svg>
             </a>
             <div class="nav-links" id="navLinks">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#projects" class="nav-link">Progetti</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#contact" class="nav-link">Contatti</a>
+                <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
+                <a href="#projects" class="nav-link" data-i18n="nav.projects">Progetti</a>
+                <a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a>
+                <a href="#contact" class="nav-link" data-i18n="nav.contact">Contatti</a>
             </div>
+            <button class="lang-toggle" id="langToggle" aria-label="Change language">
+                <span class="lang-option active" data-lang="it">IT</span>
+                <span class="lang-separator">/</span>
+                <span class="lang-option" data-lang="en">EN</span>
+            </button>
             <button class="nav-toggle" id="navToggle" aria-label="Menu">
                 <span></span>
                 <span></span>
@@ -78,20 +83,20 @@
                     <span class="typing-text" id="typingText"></span>
                     <span class="typing-cursor">|</span>
                 </p>
-                <p class="hero-description">
+                <p class="hero-description" data-i18n="hero.description">
                     Co-founder di <a href="https://famvision.it" target="_blank" rel="noopener" class="highlight-link">FAM Vision</a>,
                     web agency innovativa specializzata in sviluppo web moderno
                     e soluzioni digitali personalizzate.
                 </p>
                 <div class="hero-cta">
                     <a href="#projects" class="btn btn-primary">
-                        <span>Vedi Progetti</span>
+                        <span data-i18n="hero.cta1">Vedi Progetti</span>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M7 17L17 7M17 7H7M17 7V17"/>
                         </svg>
                     </a>
                     <a href="#contact" class="btn btn-secondary">
-                        <span>Contattami</span>
+                        <span data-i18n="hero.cta2">Contattami</span>
                     </a>
                 </div>
             </div>
@@ -114,23 +119,23 @@
     <section class="about" id="about">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Chi Sono</span>
-                <h2 class="section-title">Creo esperienze digitali <br><span class="text-gradient">che fanno la differenza</span></h2>
+                <span class="section-tag" data-i18n="about.tag">Chi Sono</span>
+                <h2 class="section-title" data-i18n="about.title">Creo esperienze digitali <br><span class="text-gradient">che fanno la differenza</span></h2>
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p class="about-lead">
+                    <p class="about-lead" data-i18n="about.lead">
                         Sono una Full Stack Developer appassionata di sviluppo web.
                         La mia missione e trasformare idee in esperienze digitali
                         coinvolgenti e performanti.
                     </p>
-                    <p>
+                    <p data-i18n="about.p1">
                         Con FAM Vision, ho co-fondato una web agency con soci dislocati
                         su tutto il territorio italiano. Lavoriamo con tecnologie moderne come
                         Angular, Firebase e AWS per creare soluzioni su misura per aziende
                         di ogni dimensione.
                     </p>
-                    <p>
+                    <p data-i18n="about.p2">
                         Il mio approccio combina creativita e competenze tecniche per
                         realizzare interfacce intuitive, accessibili e visivamente accattivanti.
                     </p>
@@ -157,9 +162,9 @@
                                 </svg>
                             </div>
                             <h3>FAM Vision</h3>
-                            <p>Web Agency innovativa specializzata in sviluppo moderno e design</p>
+                            <p data-i18n="about.card">Web Agency innovativa specializzata in sviluppo moderno e design</p>
                             <a href="https://famvision.it" target="_blank" rel="noopener" class="card-link">
-                                Scopri di piu
+                                <span data-i18n="about.cardLink">Scopri di piu</span>
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M7 17L17 7M17 7H7M17 7V17"/>
                                 </svg>
@@ -176,12 +181,12 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Portfolio</span>
-                <h2 class="section-title">Progetti <span class="text-gradient">Selezionati</span></h2>
-                <p class="section-description">Una selezione dei progetti piu significativi su cui ho lavorato</p>
+                <h2 class="section-title" data-i18n="projects.title">Progetti <span class="text-gradient">Selezionati</span></h2>
+                <p class="section-description" data-i18n="projects.description">Una selezione dei progetti piu significativi su cui ho lavorato</p>
             </div>
 
             <div class="projects-filter">
-                <button class="filter-btn active" data-filter="all">Tutti</button>
+                <button class="filter-btn active" data-filter="all" data-i18n="projects.filterAll">Tutti</button>
                 <button class="filter-btn" data-filter="corporate">Corporate</button>
                 <button class="filter-btn" data-filter="webapp">Web App</button>
                 <button class="filter-btn" data-filter="landing">Landing</button>
@@ -210,7 +215,7 @@
                             <span class="tag">3D</span>
                         </div>
                         <h3 class="project-title">FAM Vision</h3>
-                        <p class="project-description">Web agency innovativa con design 3D immersivo, effetti parallax e animazioni cinematografiche.</p>
+                        <p class="project-description" data-i18n="projects.famvision">Web agency innovativa con design 3D immersivo, effetti parallax e animazioni cinematografiche.</p>
                         <span class="project-year">2024</span>
                     </div>
                 </article>
@@ -236,7 +241,7 @@
                             <span class="tag">Lead Gen</span>
                         </div>
                         <h3 class="project-title">SCFinance</h3>
-                        <p class="project-description">Landing page ottimizzata per la raccolta lead per finanziamenti fotovoltaici con form avanzato e upload documenti.</p>
+                        <p class="project-description" data-i18n="projects.scfinance">Landing page ottimizzata per la raccolta lead per finanziamenti fotovoltaici con form avanzato e upload documenti.</p>
                         <span class="project-year">2025</span>
                     </div>
                 </article>
@@ -262,7 +267,7 @@
                             <span class="tag">Swiper</span>
                         </div>
                         <h3 class="project-title">CERNET ESCO</h3>
-                        <p class="project-description">Sito corporate multipage con gestione privacy avanzata, sistema contact form e design responsive.</p>
+                        <p class="project-description" data-i18n="projects.cernet">Sito corporate multipage con gestione privacy avanzata, sistema contact form e design responsive.</p>
                         <span class="project-year">2025</span>
                     </div>
                 </article>
@@ -288,7 +293,7 @@
                             <span class="tag">AWS</span>
                         </div>
                         <h3 class="project-title">SC Dashboard Admin</h3>
-                        <p class="project-description">Piattaforma completa per Comunita Energetiche con dashboard personalizzate, Stripe e mappe OpenStreetMap.</p>
+                        <p class="project-description" data-i18n="projects.scadmin">Piattaforma completa per Comunita Energetiche con dashboard personalizzate, Stripe e mappe OpenStreetMap.</p>
                         <span class="project-year">2024</span>
                     </div>
                 </article>
@@ -314,7 +319,7 @@
                             <span class="tag">Maps</span>
                         </div>
                         <h3 class="project-title">SC Corporate</h3>
-                        <p class="project-description">Sito corporate per Comunita Energetiche con mappe interattive OpenStreetMap e WhatsApp Business.</p>
+                        <p class="project-description" data-i18n="projects.sccorporate">Sito corporate per Comunita Energetiche con mappe interattive OpenStreetMap e WhatsApp Business.</p>
                         <span class="project-year">2024</span>
                     </div>
                 </article>
@@ -340,7 +345,7 @@
                             <span class="tag">Trustpilot</span>
                         </div>
                         <h3 class="project-title">Adriano Group</h3>
-                        <p class="project-description">Landing page SEO-ottimizzata con animazioni Motion fluide e integrazione Trustpilot per recensioni.</p>
+                        <p class="project-description" data-i18n="projects.adriano">Landing page SEO-ottimizzata con animazioni Motion fluide e integrazione Trustpilot per recensioni.</p>
                         <span class="project-year">2024</span>
                     </div>
                 </article>
@@ -366,7 +371,7 @@
                             <span class="tag">Stripe</span>
                         </div>
                         <h3 class="project-title">SC Dashboard User</h3>
-                        <p class="project-description">Dashboard utente per CER con gestione proprieta, impianti e pagamenti flessibili via Stripe.</p>
+                        <p class="project-description" data-i18n="projects.scuser">Dashboard utente per CER con gestione proprieta, impianti e pagamenti flessibili via Stripe.</p>
                         <span class="project-year">2024</span>
                     </div>
                 </article>
@@ -392,7 +397,7 @@
                             <span class="tag">SaaS</span>
                         </div>
                         <h3 class="project-title">Football Match Analytics</h3>
-                        <p class="project-description">Piattaforma SaaS enterprise con 10 modelli AI, gamification avanzata e analisi di 35.000+ partite.</p>
+                        <p class="project-description" data-i18n="projects.football">Piattaforma SaaS enterprise con 10 modelli AI, gamification avanzata e analisi di 35.000+ partite.</p>
                         <span class="project-year">2025</span>
                     </div>
                 </article>
@@ -418,7 +423,7 @@
                             <span class="tag">Cinema</span>
                         </div>
                         <h3 class="project-title">Caora Film</h3>
-                        <p class="project-description">Boutique production house dedicata al cinema d'autore e residenze artistiche immersive.</p>
+                        <p class="project-description" data-i18n="projects.caora">Boutique production house dedicata al cinema d'autore e residenze artistiche immersive.</p>
                         <span class="project-year">2024</span>
                     </div>
                 </article>
@@ -430,7 +435,7 @@
     <section class="skills" id="skills">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Competenze</span>
+                <span class="section-tag" data-i18n="skills.tag">Competenze</span>
                 <h2 class="section-title">Tech Stack & <span class="text-gradient">Skills</span></h2>
             </div>
             <div class="skills-grid">
@@ -513,9 +518,9 @@
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Contatti</span>
-                <h2 class="section-title">Lavoriamo <span class="text-gradient">Insieme</span></h2>
-                <p class="section-description">Hai un progetto in mente? Sono pronta ad ascoltare la tua idea!</p>
+                <span class="section-tag" data-i18n="contact.tag">Contatti</span>
+                <h2 class="section-title" data-i18n="contact.title">Lavoriamo <span class="text-gradient">Insieme</span></h2>
+                <p class="section-description" data-i18n="contact.description">Hai un progetto in mente? Sono pronta ad ascoltare la tua idea!</p>
             </div>
 
             <div class="contact-cta">
@@ -579,14 +584,14 @@
                     <p>Full Stack Developer<br>Co-founder @ FAM Vision</p>
                 </div>
                 <div class="footer-links">
-                    <a href="#about">About</a>
-                    <a href="#projects">Progetti</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#contact">Contatti</a>
+                    <a href="#about" data-i18n="nav.about">About</a>
+                    <a href="#projects" data-i18n="nav.projects">Progetti</a>
+                    <a href="#skills" data-i18n="nav.skills">Skills</a>
+                    <a href="#contact" data-i18n="nav.contact">Contatti</a>
                 </div>
                 <div class="footer-copy">
-                    <p>&copy; 2024 Maria Chiara Salis. Tutti i diritti riservati.</p>
-                    <p class="footer-credit">Designed & Built with passion</p>
+                    <p data-i18n="footer.copy">&copy; 2024 Maria Chiara Salis. Tutti i diritti riservati.</p>
+                    <p class="footer-credit" data-i18n="footer.credit">Designed & Built with passion</p>
                 </div>
             </div>
         </div>

@@ -17,18 +17,100 @@
         filterBtns: document.querySelectorAll('.filter-btn'),
         projectCards: document.querySelectorAll('.project-card'),
         statNumbers: document.querySelectorAll('.stat-number'),
-        navLinkItems: document.querySelectorAll('.nav-link')
+        navLinkItems: document.querySelectorAll('.nav-link'),
+        langToggle: document.getElementById('langToggle')
+    };
+
+    // Translations
+    const translations = {
+        it: {
+            'nav.about': 'About',
+            'nav.projects': 'Progetti',
+            'nav.skills': 'Skills',
+            'nav.contact': 'Contatti',
+            'hero.description': 'Co-founder di <a href="https://famvision.it" target="_blank" rel="noopener" class="highlight-link">FAM Vision</a>, web agency innovativa specializzata in sviluppo web moderno e soluzioni digitali personalizzate.',
+            'hero.cta1': 'Vedi Progetti',
+            'hero.cta2': 'Contattami',
+            'about.tag': 'Chi Sono',
+            'about.title': 'Creo esperienze digitali <br><span class="text-gradient">che fanno la differenza</span>',
+            'about.lead': 'Sono una Full Stack Developer appassionata di sviluppo web. La mia missione e trasformare idee in esperienze digitali coinvolgenti e performanti.',
+            'about.p1': 'Con FAM Vision, ho co-fondato una web agency con soci dislocati su tutto il territorio italiano. Lavoriamo con tecnologie moderne come Angular, Firebase e AWS per creare soluzioni su misura per aziende di ogni dimensione.',
+            'about.p2': 'Il mio approccio combina creativita e competenze tecniche per realizzare interfacce intuitive, accessibili e visivamente accattivanti.',
+            'about.card': 'Web Agency innovativa specializzata in sviluppo moderno e design',
+            'about.cardLink': 'Scopri di piu',
+            'projects.title': 'Progetti <span class="text-gradient">Selezionati</span>',
+            'projects.description': 'Una selezione dei progetti piu significativi su cui ho lavorato',
+            'projects.filterAll': 'Tutti',
+            'projects.famvision': 'Web agency innovativa con design 3D immersivo, effetti parallax e animazioni cinematografiche.',
+            'projects.scfinance': 'Landing page ottimizzata per la raccolta lead per finanziamenti fotovoltaici con form avanzato e upload documenti.',
+            'projects.cernet': 'Sito corporate multipage con gestione privacy avanzata, sistema contact form e design responsive.',
+            'projects.scadmin': 'Piattaforma completa per Comunita Energetiche con dashboard personalizzate, Stripe e mappe OpenStreetMap.',
+            'projects.sccorporate': 'Sito corporate per Comunita Energetiche con mappe interattive OpenStreetMap e WhatsApp Business.',
+            'projects.adriano': 'Landing page SEO-ottimizzata con animazioni Motion fluide e integrazione Trustpilot per recensioni.',
+            'projects.scuser': 'Dashboard utente per CER con gestione proprieta, impianti e pagamenti flessibili via Stripe.',
+            'projects.football': 'Piattaforma SaaS enterprise con 10 modelli AI, gamification avanzata e analisi di 35.000+ partite.',
+            'projects.caora': 'Boutique production house dedicata al cinema d\'autore e residenze artistiche immersive.',
+            'skills.tag': 'Competenze',
+            'contact.tag': 'Contatti',
+            'contact.title': 'Lavoriamo <span class="text-gradient">Insieme</span>',
+            'contact.description': 'Hai un progetto in mente? Sono pronta ad ascoltare la tua idea!',
+            'footer.copy': '&copy; 2024 Maria Chiara Salis. Tutti i diritti riservati.',
+            'footer.credit': 'Designed & Built with passion'
+        },
+        en: {
+            'nav.about': 'About',
+            'nav.projects': 'Projects',
+            'nav.skills': 'Skills',
+            'nav.contact': 'Contact',
+            'hero.description': 'Co-founder of <a href="https://famvision.it" target="_blank" rel="noopener" class="highlight-link">FAM Vision</a>, an innovative web agency specializing in modern web development and custom digital solutions.',
+            'hero.cta1': 'View Projects',
+            'hero.cta2': 'Contact Me',
+            'about.tag': 'About Me',
+            'about.title': 'I create digital experiences <br><span class="text-gradient">that make a difference</span>',
+            'about.lead': 'I\'m a Full Stack Developer passionate about web development. My mission is to transform ideas into engaging and high-performing digital experiences.',
+            'about.p1': 'With FAM Vision, I co-founded a web agency with partners located throughout Italy. We work with modern technologies like Angular, Firebase and AWS to create tailored solutions for businesses of all sizes.',
+            'about.p2': 'My approach combines creativity and technical expertise to build intuitive, accessible and visually appealing interfaces.',
+            'about.card': 'Innovative Web Agency specializing in modern development and design',
+            'about.cardLink': 'Learn more',
+            'projects.title': 'Selected <span class="text-gradient">Projects</span>',
+            'projects.description': 'A selection of the most significant projects I\'ve worked on',
+            'projects.filterAll': 'All',
+            'projects.famvision': 'Innovative web agency with immersive 3D design, parallax effects and cinematic animations.',
+            'projects.scfinance': 'Lead generation landing page optimized for solar financing with advanced form and document upload.',
+            'projects.cernet': 'Multipage corporate website with advanced privacy management, contact form system and responsive design.',
+            'projects.scadmin': 'Complete platform for Energy Communities with custom dashboards, Stripe and OpenStreetMap maps.',
+            'projects.sccorporate': 'Corporate website for Energy Communities with OpenStreetMap interactive maps and WhatsApp Business.',
+            'projects.adriano': 'SEO-optimized landing page with smooth Motion animations and Trustpilot integration for reviews.',
+            'projects.scuser': 'User dashboard for REC with property management, plants and flexible payments via Stripe.',
+            'projects.football': 'Enterprise SaaS platform with 10 AI models, advanced gamification and analysis of 35,000+ matches.',
+            'projects.caora': 'Boutique production house dedicated to art house cinema and immersive artistic residencies.',
+            'skills.tag': 'Skills',
+            'contact.tag': 'Contact',
+            'contact.title': 'Let\'s Work <span class="text-gradient">Together</span>',
+            'contact.description': 'Have a project in mind? I\'m ready to hear your idea!',
+            'footer.copy': '&copy; 2024 Maria Chiara Salis. All rights reserved.',
+            'footer.credit': 'Designed & Built with passion'
+        }
     };
 
     // Configuration
     const config = {
-        typingTexts: [
-            'Full Stack Developer',
-            'Co-founder @ FAM Vision',
-            'Angular Specialist',
-            'Spring Boot Developer',
-            'Firebase Expert'
-        ],
+        typingTexts: {
+            it: [
+                'Full Stack Developer',
+                'Co-founder @ FAM Vision',
+                'Angular Specialist',
+                'Spring Boot Developer',
+                'Firebase Expert'
+            ],
+            en: [
+                'Full Stack Developer',
+                'Co-founder @ FAM Vision',
+                'Angular Specialist',
+                'Spring Boot Developer',
+                'Firebase Expert'
+            ]
+        },
         typingSpeed: 80,
         deletingSpeed: 50,
         pauseDuration: 2000
@@ -39,7 +121,8 @@
         currentTextIndex: 0,
         charIndex: 0,
         isDeleting: false,
-        statsAnimated: false
+        statsAnimated: false,
+        currentLang: localStorage.getItem('lang') || 'it'
     };
 
     /**
@@ -47,6 +130,7 @@
      */
     function init() {
         setupNavigation();
+        setupLanguageToggle();
         setupCursorGlow();
         setupTypingEffect();
         setupScrollReveal();
@@ -54,6 +138,46 @@
         setupStatsCounter();
         setupSmoothScroll();
         setupContactForm();
+
+        // Apply saved language on load
+        applyLanguage(state.currentLang);
+    }
+
+    /**
+     * Language toggle functionality
+     */
+    function setupLanguageToggle() {
+        if (!dom.langToggle) return;
+
+        dom.langToggle.addEventListener('click', () => {
+            const newLang = state.currentLang === 'it' ? 'en' : 'it';
+            state.currentLang = newLang;
+            localStorage.setItem('lang', newLang);
+            applyLanguage(newLang);
+        });
+    }
+
+    /**
+     * Apply language to all elements with data-i18n attribute
+     */
+    function applyLanguage(lang) {
+        // Update toggle UI
+        const langOptions = document.querySelectorAll('.lang-option');
+        langOptions.forEach(option => {
+            option.classList.toggle('active', option.dataset.lang === lang);
+        });
+
+        // Update all translatable elements
+        const elements = document.querySelectorAll('[data-i18n]');
+        elements.forEach(el => {
+            const key = el.dataset.i18n;
+            if (translations[lang] && translations[lang][key]) {
+                el.innerHTML = translations[lang][key];
+            }
+        });
+
+        // Update HTML lang attribute
+        document.documentElement.lang = lang;
     }
 
     /**
@@ -140,7 +264,8 @@
         if (!dom.typingText) return;
 
         function type() {
-            const currentText = config.typingTexts[state.currentTextIndex];
+            const texts = config.typingTexts[state.currentLang] || config.typingTexts.it;
+            const currentText = texts[state.currentTextIndex];
 
             if (state.isDeleting) {
                 dom.typingText.textContent = currentText.substring(0, state.charIndex - 1);
@@ -157,7 +282,8 @@
                 state.isDeleting = true;
             } else if (state.isDeleting && state.charIndex === 0) {
                 state.isDeleting = false;
-                state.currentTextIndex = (state.currentTextIndex + 1) % config.typingTexts.length;
+                const texts = config.typingTexts[state.currentLang] || config.typingTexts.it;
+                state.currentTextIndex = (state.currentTextIndex + 1) % texts.length;
                 typeSpeed = 500;
             }
 
