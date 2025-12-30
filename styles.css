@@ -179,24 +179,15 @@ ul, ol {
 .nav-logo {
     display: flex;
     align-items: center;
-    gap: var(--space-xs);
-    font-weight: 700;
-    font-size: 1.25rem;
 }
 
-.logo-text {
-    background: var(--gradient-text);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.logo-monogram {
+    transition: var(--transition-base);
 }
 
-.logo-dot {
-    width: 8px;
-    height: 8px;
-    background: var(--color-accent);
-    border-radius: 50%;
-    animation: pulse 2s infinite;
+.nav-logo:hover .logo-monogram {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 12px rgba(124, 58, 237, 0.6));
 }
 
 @keyframes pulse {
@@ -1054,75 +1045,313 @@ section {
     background: var(--color-bg-dark);
 }
 
-.contact-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-4xl);
-    align-items: start;
-}
-
-.contact-info {
-    padding-right: var(--space-2xl);
-}
-
-.contact-description {
-    font-size: 1.125rem;
-    color: var(--color-text-secondary);
-    line-height: 1.7;
-    margin-bottom: var(--space-2xl);
-}
-
-.contact-details {
+.contact-cta {
     display: flex;
-    flex-direction: column;
-    gap: var(--space-lg);
-    margin-bottom: var(--space-2xl);
+    justify-content: center;
+    margin-bottom: var(--space-3xl);
 }
 
-.contact-item {
+.contact-email-btn {
     display: flex;
     align-items: center;
     gap: var(--space-md);
-    padding: var(--space-md);
+    padding: var(--space-lg) var(--space-2xl);
     background: var(--gradient-card);
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xl);
     transition: var(--transition-base);
 }
 
-.contact-item:hover {
+.contact-email-btn:hover {
     border-color: var(--color-primary);
-    transform: translateX(5px);
+    box-shadow: var(--glow-primary);
+    transform: translateY(-3px);
 }
 
-.contact-icon {
-    width: 48px;
-    height: 48px;
+.email-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(99, 102, 241, 0.1);
-    border-radius: var(--radius-md);
-    color: var(--color-primary);
+    width: 48px;
+    height: 48px;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-lg);
+    color: white;
 }
 
-.contact-label {
-    display: block;
-    font-size: 0.75rem;
+.email-text {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.email-arrow {
+    color: var(--color-text-muted);
+    transition: var(--transition-base);
+}
+
+.contact-email-btn:hover .email-arrow {
+    color: var(--color-primary-light);
+    transform: translate(3px, -3px);
+}
+
+/* Contact Cards - Modern Design */
+.contact-cards {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-xl);
+    flex-wrap: wrap;
+}
+
+.contact-card {
+    position: relative;
+    width: auto;
+    padding: 1px;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, var(--color-border) 0%, transparent 50%, var(--color-border) 100%);
+    overflow: hidden;
+    transition: var(--transition-base);
+}
+
+.contact-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-xl);
+    padding: 2px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent-light) 50%, var(--color-primary) 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.contact-card:hover::before {
+    opacity: 1;
+}
+
+.contact-card__glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    height: 150%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+    pointer-events: none;
+}
+
+.contact-card:hover .contact-card__glow {
+    opacity: 1;
+}
+
+.contact-card__content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--color-bg-card);
+    border-radius: calc(var(--radius-lg) - 1px);
+    z-index: 1;
+}
+
+.contact-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-md);
+    background: var(--gradient-card);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+    flex-shrink: 0;
+    transition: var(--transition-base);
+}
+
+.contact-card__icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.contact-card:hover .contact-card__icon {
+    background: var(--gradient-primary);
+    border-color: transparent;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: var(--glow-primary);
+}
+
+.contact-card__info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+    min-width: 0;
+}
+
+.contact-card__label {
+    font-size: 0.6rem;
+    font-weight: 500;
     color: var(--color-text-muted);
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
-.contact-value {
-    display: block;
+.contact-card__value {
+    font-size: 0.8rem;
     font-weight: 600;
     color: var(--color-text);
+    transition: var(--transition-fast);
+}
+
+.contact-card:hover .contact-card__value {
+    color: var(--color-primary-light);
+}
+
+.contact-card__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: var(--radius-sm);
+    background: transparent;
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+    transition: var(--transition-base);
+}
+
+.contact-card__arrow svg {
+    width: 14px;
+    height: 14px;
+}
+
+.contact-card:hover .contact-card__arrow {
+    background: rgba(124, 58, 237, 0.1);
+    color: var(--color-primary-light);
+    transform: translate(2px, -2px);
+}
+
+.contact-card__shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.03),
+        transparent
+    );
+    transform: skewX(-20deg);
+    transition: none;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.contact-card:hover .contact-card__shine {
+    animation: cardShine 0.6s ease forwards;
+}
+
+@keyframes cardShine {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 150%;
+    }
+}
+
+/* GitHub card specific */
+.contact-card--github:hover .contact-card__icon {
+    background: linear-gradient(135deg, #333 0%, #24292e 100%);
+}
+
+/* FAM card specific */
+.contact-card--fam:hover .contact-card__icon {
+    background: var(--gradient-primary);
+}
+
+/* Hover lift effect */
+.contact-card:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.2),
+        0 0 20px rgba(124, 58, 237, 0.1);
+}
+
+@media (max-width: 768px) {
+    .contact-cards {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-md);
+    }
+
+    .contact-card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .contact-card__content {
+        padding: var(--space-md) var(--space-lg);
+    }
+
+    .contact-card__icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    .contact-card__icon svg {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+.contact-info-row {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-4xl);
+    margin-bottom: var(--space-2xl);
+}
+
+.contact-info-item {
+    text-align: center;
+}
+
+.info-label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-xs);
+}
+
+.info-value {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+.info-link {
+    transition: var(--transition-fast);
+}
+
+.info-link:hover {
+    color: var(--color-primary-light);
 }
 
 .contact-social {
     display: flex;
     gap: var(--space-md);
+    justify-content: center;
 }
 
 .social-btn {
@@ -1222,13 +1451,8 @@ section {
     gap: var(--space-md);
 }
 
-.footer-logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-    background: var(--gradient-text);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.footer-logo-svg {
+    flex-shrink: 0;
 }
 
 .footer-brand p {
@@ -1381,6 +1605,21 @@ section {
         grid-template-columns: 1fr;
     }
 
+    .contact-email-btn {
+        flex-direction: column;
+        padding: var(--space-lg);
+        text-align: center;
+    }
+
+    .email-text {
+        font-size: 0.875rem;
+    }
+
+    .contact-info-row {
+        flex-direction: column;
+        gap: var(--space-lg);
+    }
+
     .project-featured {
         grid-column: span 1;
     }
@@ -1431,6 +1670,64 @@ section {
     .filter-btn {
         padding: var(--space-xs) var(--space-md);
         font-size: 0.75rem;
+    }
+}
+
+/* FAM Vision Fixed Button */
+.fam-vision-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    background: rgba(26, 21, 40, 0.85);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    z-index: 100;
+    transition: var(--transition-base);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.fam-vision-btn:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--glow-primary);
+}
+
+.fam-vision-btn-label {
+    font-size: 0.625rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.fam-vision-btn-brand {
+    font-size: 0.75rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 50%, #5b21b6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+@media (max-width: 768px) {
+    .fam-vision-btn {
+        bottom: 15px;
+        right: 15px;
+        padding: var(--space-xs) var(--space-sm);
+    }
+
+    .fam-vision-btn-label {
+        font-size: 0.5rem;
+    }
+
+    .fam-vision-btn-brand {
+        font-size: 0.625rem;
     }
 }
 
