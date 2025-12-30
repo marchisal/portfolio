@@ -1,0 +1,59 @@
+# Maria Chiara Salis
+
+> Web Developer & Project Manager based in Italy. Co-founder of FAM Vision web agency. Specializes in creating digital experiences with Angular, Firebase, and cloud-native architectures.
+
+Maria Chiara Salis is a creative developer with a unique blend of web development expertise and project management skills. After completing an intensive Full Stack Developer course at EPICODE, she pursued her passion for technology and is currently pursuing a Bachelor's Degree in Computer Engineering & AI. This dual background allows her to create solutions that are both technically robust and strategically driven.
+
+## Contact
+
+- [Email](mailto:mariachiara.salis@famvision.it): mariachiara.salis@famvision.it
+- [GitHub](https://github.com/marchisal): @marchisal
+- [FAM Vision](https://famvision.it): Web agency co-founded by Maria Chiara
+
+## Skills
+
+**Languages:** JavaScript, TypeScript, HTML5, CSS3/SCSS
+
+**Frontend:** Angular 16/17, Bootstrap, Tailwind
+
+**Backend:** Spring Boot, Node.js, REST API
+
+**Database:** PostgreSQL, Firestore
+
+**DevOps & Cloud:** Firebase, AWS, Google Cloud, Docker, CI/CD, Git
+
+**Tools:** Stripe, Chart.js, Swiper.js, Motion, OpenStreetMap
+
+**Project Management:** Agile/Scrum, Jira, Trello, Confluence, Team Leadership
+
+**Security & Compliance:** GDPR, OAuth 2.0, JWT, Iubenda, reCAPTCHA
+
+## Experience
+
+- **Co-Founder & Lead Developer at FAM Vision** (Oct 2023 - Present): Web development, custom web apps, SaaS platforms, branding, SEO optimization
+
+## Education
+
+- **Bachelor's Degree in Computer Engineering & AI** - EPICODE Institute of Technology (2024 - Present)
+- **Full Stack Development Course** - EPICODE Institute of Technology (2023)
+
+## Featured Projects
+
+- [FAM Vision](https://famvision.it): Web agency platform with 24/7 client dashboard, real-time monitoring, ticket system - Angular SSR, Firebase, AI Integration
+- [Football Match Analytics](https://football-match-analytics.web.app): Enterprise SaaS platform with 10 AI models for predictive football analytics - Angular 17, Firebase, Google Cloud, AI/ML
+- [SC Piattaforma CER](https://app.semplicementecomunita.it): Complete platform for Renewable Energy Communities with multi-role dashboard, Stripe payments, interactive maps - Angular, Spring Boot, AWS, Stripe
+- [SC Dashboard Admin](https://admin.semplicementecomunita.it): Administrative dashboard for CER management with real-time analytics and GSE practices - Angular, Spring Boot, Chart.js, PostgreSQL
+- [SCFinance](https://scfinance.it): Lead generation landing page for photovoltaic financing - Angular, Firebase, Bootstrap
+- [CERNET ESCO](https://cernet-esco.it): Corporate multipage website with GDPR compliant privacy management - Angular, Firebase, Iubenda
+- [Adriano Group](https://adrianogroup.it): SEO-optimized single-page landing with Motion animations and Trustpilot integration - Angular, Firebase, Motion
+- [SC Corporate Website](https://semplicementecomunita.it): Corporate site for CERNET management systems with interactive OpenStreetMap - Angular, Firebase, OpenStreetMap
+
+## Stats
+
+- 8 Completed Projects
+- 4 Satisfied Clients
+- 3 Years of Experience
+
+## Optional
+
+- [GitHub Repositories](https://github.com/marchisal?tab=repositories): More projects and code samples
